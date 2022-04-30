@@ -7,7 +7,8 @@ import 'content.dart';
 import 'functions.dart';
 import 'package:flutter/services.dart';
 
-//TODO: Generate the html css and js and host on Firebase
+//Generate the html css and js and host on Firebase
+//https://www.youtube.com/watch?v=xJo7Mqse960
 //Personal Profile Website
 void main() async {
   //https://greymag.medium.com/flutter-orientation-lock-portrait-only-c98910ebd769
@@ -57,6 +58,25 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.black,
+        onPressed: (){
+          setState(() {
+            if(selectedLanguage.languageName == Languages.english.languageName){
+              setState(() {
+                selectedLanguage = Languages.spanish;
+              });
+            }else{
+              setState(() {
+                selectedLanguage = Languages.english;
+              });
+            }
+          });
+        },
+        child: Icon(
+          Icons.translate,
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: [
@@ -150,7 +170,7 @@ class MyName extends StatelessWidget {
         children: [
           const CircleAvatar(
             radius: 38,
-            backgroundImage: AssetImage("images/my_photo.png"),
+            backgroundImage: NetworkImage("https://by3302files.storage.live.com/y4m9KxtoPfjCQJlSP2hkSHxG3796NMKNGArQRNs9BZ3VsPGClRRPkI-_Za7laUYM7A_DNi6MLFZkRDWKlJpxrzQnZC0w-w5sN9cc4QuwSeAePe_dhiWeOQEMtg98BFBUZqTeLdZMbN5gMiHygqqCgMLq3jbaIdEJl5pVpN1UWAv0sH-YaTJ1Xfq6mpHZiQSr6Eb?width=707&height=583&cropmode=none"),
           ),
           const SizedBox(
             width: 15,
