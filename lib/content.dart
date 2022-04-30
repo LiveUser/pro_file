@@ -240,7 +240,7 @@ List<Category> appContent({
       links: [
         Link(
           itemName: const Text("Blender Renders"), 
-          link: "https://makeandhack.blogspot.com/",
+          link: "https://valentinradames.wixsite.com/blenderrenders",
         ),
       ],
     ),
